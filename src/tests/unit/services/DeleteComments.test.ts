@@ -1,8 +1,8 @@
 import { expect } from "chai";
 import { Model } from "sequelize";
 import Sinon from "sinon";
-import CommentService from "../../api/services/CommentService";
-import Comment from "../../database/models/CommentModel";
+import CommentService from "../../../api/services/CommentService";
+import Comment from "../../../database/models/CommentModel";
 
 describe("Testes de serviço: DELETE", function () {
   afterEach(function () {

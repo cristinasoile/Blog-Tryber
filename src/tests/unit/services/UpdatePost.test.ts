@@ -1,9 +1,9 @@
 import { expect } from "chai";
 import { Model } from "sequelize";
 import Sinon from "sinon";
-import IPost from "../../api/interfaces/IPost";
-import PostService from "../../api/services/PostService";
-import Post from "../../database/models/PostModel";
+import IPost from "../../../api/interfaces/IPost";
+import PostService from "../../../api/services/PostService";
+import Post from "../../../database/models/PostModel";
 
 describe("Testes de serviço: Update", function () {
   afterEach(function () {
@@ -44,7 +44,6 @@ describe("Testes de serviço: Update", function () {
     const service = new PostService();
     try {
       const teste = await service.update(id, inputMock);
-      console.log("====>", teste);
     } catch (error) {
       if (error instanceof Error) expect(error.message).to.equal(outputMock);
     }

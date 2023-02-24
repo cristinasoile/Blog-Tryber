@@ -1,9 +1,9 @@
 import { expect } from "chai";
 import { Model } from "sequelize";
 import Sinon from "sinon";
-import IComment from "../../api/interfaces/IComment";
-import CommentService from "../../api/services/CommentService";
-import Comment from "../../database/models/CommentModel";
+import IComment from "../../../api/interfaces/IComment";
+import CommentService from "../../../api/services/CommentService";
+import Comment from "../../../database/models/CommentModel";
 
 describe("Testes de serviço: Update", function () {
   afterEach(function () {
@@ -44,7 +44,6 @@ describe("Testes de serviço: Update", function () {
     const service = new CommentService();
     try {
       const teste = await service.update(id, inputMock);
-      console.log("====>", teste);
     } catch (error) {
       if (error instanceof Error) expect(error.message).to.equal(outputMock);
     }

@@ -1,30 +1,30 @@
 import { expect } from "chai";
 import { Model } from "sequelize";
 import Sinon from "sinon";
-import IPost from "../../api/interfaces/IPost";
-import PostService from "../../api/services/PostService";
-import Post from "../../database/models/PostModel";
+import IComment from "../../../api/interfaces/IComment";
+import CommentService from "../../../api/services/CommentService";
+import Comment from "../../../database/models/CommentModel";
 
 describe("Testes de serviço: Create Post", function () {
   afterEach(function () {
     Sinon.restore();
   });
 
-  it("Caso 1: Deve criar um noo Post", async function () {
-    const inputMock: IPost = {
-      title: "Typescript na pratica",
+  it("Caso 1: Deve criar um novo Comment", async function () {
+    const inputMock: IComment = {
       content: "Typescript é uma boa ferramenta para ajudar no POO",
+      postId: "Typescript na pratica",
     };
-    const outputMock: Post = new Post({
+    const outputMock: Comment = new Comment({
       id: 1,
-      title: "Typescript na pratica",
       content: "Typescript é uma boa ferramenta para ajudar no POO",
+      postId: "Typescript na pratica",
     });
 
     // when
 
     Sinon.stub(Model, "create").resolves(outputMock);
-    const service = new PostService();
+    const service = new CommentService();
     const result = await service.create(inputMock);
 
     // then

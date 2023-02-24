@@ -1,9 +1,8 @@
 import { expect } from "chai";
 import { Model } from "sequelize";
 import Sinon from "sinon";
-import IPost from "../../api/interfaces/IPost";
-import PostService from "../../api/services/PostService";
-import Post from "../../database/models/PostModel";
+import PostService from "../../../api/services/PostService";
+import Post from "../../../database/models/PostModel";
 
 describe("Testes de serviço: Read all Post", function () {
   afterEach(function () {

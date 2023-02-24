@@ -13,7 +13,8 @@ export default class PostService implements IServicePost {
   async readAll(): Promise<Post[]> {
     return await this.model.findAll();
   }
-
+  // findOne - pode achar por where
+  // findByPk - primarykey    
   async readById(id: number): Promise<Post> {
     await this._verify(id);
     return (await this.model.findByPk(id)) as Post;

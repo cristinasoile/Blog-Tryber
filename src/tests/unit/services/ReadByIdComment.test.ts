@@ -1,9 +1,8 @@
 import { expect } from "chai";
 import { Model } from "sequelize";
 import Sinon from "sinon";
-import IComment from "../../api/interfaces/IComment";
-import CommentService from "../../api/services/CommentService";
-import Comment from "../../database/models/CommentModel";
+import CommentService from "../../../api/services/CommentService";
+import Comment from "../../../database/models/CommentModel";
 
 describe("Testes de serviço: Read By Id", function () {
   afterEach(function () {
